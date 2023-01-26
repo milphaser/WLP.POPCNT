@@ -1,0 +1,32 @@
+Word-Level Parallelism
+(Application to Population Count Problem)
+
+Henry S. Warren, Jr. Hacker's Delight
+
+n = 4 (word size)
+W4 = a3a2a1a0, S4 = a3+a2+a1+a0 = ?
+
+a) Theory	b) Example W4 = 1101
+ 0a2 0a0	01 01
++		+
+ 0a3 0a1	01 00
+--------	-----
+c"z"c'z'	10 01
+
+00c'z'		001
++		+
+00c"z"		010
+------		---
+0s2s1s0		011 => S4 = 3
+
+----------------------
+n 	Number of iterations 
+	log2(n)
+----------------------
+2	1
+4	2
+8	3
+16	4
+32	5
+...
+Each iteration consist of 5 simple machine instructions
